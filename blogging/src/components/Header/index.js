@@ -1,7 +1,7 @@
 import { useNavigate,useLocation } from "react-router-dom";
 import {Button,Typography,Toolbar,Box ,AppBar } from '@mui/material';
 import * as React from 'react';
-
+import Login from "../Login";
 import {Link} from '@mui/material/';
 
 
@@ -10,7 +10,7 @@ import {Link} from '@mui/material/';
 
 const Header = () =>{
   
-
+  const path = window.location.pathname;
 
   
     return (
@@ -26,16 +26,23 @@ const Header = () =>{
 
     
         
-      
-
-     
+          <>
+{ path==="/" && 
       <>
-        <Button color="inherit"><Link underline="none" color="#fff" href="">Login</Link></Button>
-        <Button color="inherit"><Link underline="none" color="#fff" href="">Register</Link></Button>
+
+        <Button color="inherit"><Link underline="none" color="#fff" href="/login">Login</Link></Button>
+        <Button color="inherit"><Link underline="none" color="#fff" href="/register">Register</Link></Button>
         </>
+      }
       
+      {path==="/login" && 
+   <>
+   <Button color="inherit"><Link underline="none" color="#fff" href="/">Home</Link></Button>
+   <Button color="inherit"><Link underline="none" color="#fff" href="/register">Register</Link></Button>
+   </>     
+}
          
-      
+      </>
       
 
 
